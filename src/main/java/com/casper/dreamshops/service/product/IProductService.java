@@ -2,15 +2,17 @@ package com.casper.dreamshops.service.product;
 
 import com.casper.dreamshops.model.Category;
 import com.casper.dreamshops.model.Product;
+import com.casper.dreamshops.request.AddProductRequest;
+import com.casper.dreamshops.request.ProductUpdateRequest;
 
 import java.util.List;
 
 public interface IProductService {
-    Product addProduct(Product product);
+    Product addProduct(AddProductRequest request);
     Product getProductById(Long id);
 
     void deleteProductById(Long id);
-    void updateProduct(Product product, Long productId);
+    Product updateProduct(ProductUpdateRequest request, Long productId);
 
     List<Product> getAllProducts();
     List<Product> getAllProductsByCategory(String category);
